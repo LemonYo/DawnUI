@@ -4,7 +4,10 @@
   "description": "a library\u001b[D\u001b[D\u001b[D\u001b[D\u001b[D\u001b[D\u001b[D\u001b[D\u001b[D\u001b[D\u001b[C\u001b[C react\u001b[C\u001b[C\u001b[C\u001b components library for morden mobile",
   "main": "index.js",
   "scripts": {
-    "test": "echo \"Error: no test specified\" && exit 1"
+    "dev": "webpack-dev-server --config ./build/webpack.dev.js",
+    "lib:prod": "webpack --config ./build/webpack.lib.js",
+    "gp:prod": "webpack --config ./build/webpack.prod.js",
+    "gp:deploy": "npm run gp:prod && gh-pages -d dist"
   },
   "repository": {
     "type": "git",
@@ -22,10 +25,29 @@
   },
   "homepage": "https://github.com/LemonYo/DawnUI#readme",
   "dependencies": {
+    "@babel/cli": "^7.11.6",
+    "@babel/core": "^7.11.6",
+    "@babel/preset-env": "^7.11.5",
+    "@babel/preset-react": "^7.10.4",
+    "autoprefixer": "^9.8.6",
+    "babel-loader": "^8.1.0",
+    "css-loader": "^4.2.2",
+    "gh-pages": "^3.1.0",
+    "html-webpack-plugin": "^4.4.1",
+    "node-sass": "^4.14.1",
+    "postcss-loader": "^3.0.0",
+    "prop-types": "^15.7.2",
     "react": "^16.13.1",
     "react-dom": "^16.13.1",
     "react-router-dom": "^5.2.0",
     "rollup": "^2.23.1",
-    "webpack": "^4.44.1"
+    "sass-loader": "^10.0.2",
+    "style-loader": "^1.2.1",
+    "webpack": "^4.44.1",
+    "webpack-clean": "^1.2.5",
+    "webpack-cli": "^3.3.12",
+    "webpack-dev-server": "^3.11.0",
+    "webpack-html-plugin": "^0.1.1",
+    "webpack-merge": "^5.1.3"
   }
 }

@@ -1,0 +1,20 @@
+//component variable
+
+// base
+$base-border-radius: 4px; // 基础的 border-radius
+$border-color: #e2e4ea;
+// button
+
+$button-border-radius: $base-border-radius; // 按钮的 默认 border-radius
+$button-color: #fff; // 按钮默认颜色
+$button-default-fill: #fff; // 按钮default 填充色
+$button-default-text-color: #41485d; // 按钮default 字体颜色
+$button-default-border-color: #c5cad5; // 按钮default 边框颜色
+$button-info-fill: #2F86F6; // 按钮 info 填充色
+$button-warn-fill: #FF5257; // 按钮 warn 填充色
+
+$button-danger-fill: #ee0a24; // 按钮 danger 填充色
+
+// input
+
+$input-color: #111a34;
