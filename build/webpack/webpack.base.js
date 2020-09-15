@@ -1,9 +1,10 @@
-const path = require("path")
+const { isDev, ROOT_DIR } = require("../utils")
 module.exports = {
-  entry: "./src/main.js",
+  entry: ROOT_DIR("./src/main.js"),
   output: {
-    filename: '[name].js',
-    path: path.resolve(__dirname, '../dist')
+    filename: isDev() === 'development' ? '[name].js' : '[name].[hash:8].js',
+    publicPath: '/',
+    path: ROOT_DIR("site")
   },
   module: {
     rules: [

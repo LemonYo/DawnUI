@@ -1,7 +1,11 @@
 import React from "react"
-import Button from "../../../packages/button/Button"
+import Button from "../../../packages/button"
+import "../../../packages/button/button.scss"
 export default function ButtonPage() {
   return (
-    <Button block type="primary">我是一个小按钮啊啊啊啊</Button>
+    <div>
+      <Button block type="primary">我是一个按钮</Button>
+      <Button block type="info">我是一个按钮</Button>
+    </div>
   )
 }

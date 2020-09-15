@@ -1,5 +1,4 @@
 const {merge} = require("webpack-merge")
-const path = require("path")
 const baseWebpack = require("./webpack.base")
 const HtmlWebpackPlugin = require("html-webpack-plugin")
 const WebpackCleanPlugin = require('webpack-clean')
