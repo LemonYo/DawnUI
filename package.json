@@ -2,14 +2,29 @@
   "name": "dawnui",
   "version": "1.0.0",
   "description": "a library\u001b[D\u001b[D\u001b[D\u001b[D\u001b[D\u001b[D\u001b[D\u001b[D\u001b[D\u001b[D\u001b[C\u001b[C react\u001b[C\u001b[C\u001b[C\u001b components library for morden mobile",
-  "main": "index.js",
-  "module": "./packages/index.js",
+  "main": "lib/index.js",
+  "module": "es/index.js",
+  "files": [
+    "es",
+    "lib",
+    "types",
+    "vetur"
+  ],
   "scripts": {
     "clean:All": "rimraf site lib dist",
     "clean": "rimraf ./gp-site",
-    "dev": "node ./build/index.js dev",
-    "site:prod": "rimraf site && node ./build/index prod",
-    "package:build": "rimraf lib"
+    "dev": "dumi dev",
+    "site:prod": "dumi build",
+    "package:build": "rimraf lib es && gulp"
+  },
+  "sideEffects": [
+    "es/**/style/*",
+    "lib/**/style/*",
+    "*.css",
+    "*.scss"
+  ],
+  "peerDependencies": {
+    "react": ">= 16.9.0"
   },
   "repository": {
     "type": "git",
@@ -27,16 +42,28 @@
   },
   "homepage": "https://github.com/LemonYo/DawnUI#readme",
   "dependencies": {
+    "@babel/runtime": "^7.11.2"
+  },
+  "devDependencies": {
     "@babel/cli": "^7.11.6",
     "@babel/core": "^7.11.6",
+    "@babel/plugin-transform-runtime": "^7.11.5",
     "@babel/preset-env": "^7.11.5",
     "@babel/preset-react": "^7.10.4",
     "@nutui/cli": "^0.3.8",
+    "@zarm-design/cli": "0.0.25",
     "autoprefixer": "^9.8.6",
     "babel-loader": "^8.1.0",
+    "clean-webpack-plugin": "^3.0.0",
     "css-loader": "^4.2.2",
+    "dumi": "^1.0.34",
     "gh-pages": "^3.1.0",
+    "gulp": "^4.0.2",
+    "gulp-babel": "^8.0.0",
+    "gulp-postcss": "^8.0.0",
+    "gulp-sass": "^4.1.0",
     "html-webpack-plugin": "^4.4.1",
+    "mini-css-extract-plugin": "^0.11.2",
     "node-sass": "^4.14.1",
     "npx": "^10.2.2",
     "postcss-loader": "^3.0.0",
@@ -48,8 +75,8 @@
     "rollup": "^2.23.1",
     "sass-loader": "^10.0.2",
     "style-loader": "^1.2.1",
+    "through2": "^4.0.2",
     "webpack": "^4.44.1",
-    "webpack-clean": "^1.2.5",
     "webpack-cli": "^3.3.12",
     "webpack-dev-server": "^3.11.0",
     "webpack-html-plugin": "^0.1.1",

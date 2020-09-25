@@ -1,5 +1,4 @@
 import React from 'react'
-import PropsTypes from 'prop-types'
 import classNames from "../utils/classnames"
 
 export default function Button(props) {
@@ -33,13 +32,4 @@ export default function Button(props) {
   return (
     <Component {...other} disabled={disabled} className={cls}>{children}</Component>
   )
-}
-
-Button.propTypes = {
-  type: PropsTypes.oneOf(["default", "primary", "warn", "info"]),
-  disabled: PropsTypes.bool,
-  size: PropsTypes.oneOf(["normal", "small", "large", "mini"]),
-  block: PropsTypes.bool,
-  plain: PropsTypes.bool,
-  round: PropsTypes.bool,
 }

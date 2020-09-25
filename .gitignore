@@ -2,6 +2,7 @@ dist
 .idea
 lib
 es
+src/.umi
 gp-site
 site
 node_modules
