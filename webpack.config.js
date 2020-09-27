@@ -11,7 +11,8 @@ module.exports = (env, argv) => {
     output: {
       path: path.resolve(__dirname, './site'),
       filename: prodMode ? '[name].[hash:8].js' : '[name].js',
-      chunkFilename: prodMode ? '[name].[chunkhash:8].js' : '[name].js'
+      chunkFilename: prodMode ? '[name].[chunkhash:8].js' : '[name].js',
+      publicPath: "/DawnUI/"
     },
     module: {
       rules: [
@@ -30,6 +31,10 @@ module.exports = (env, argv) => {
           test: /\.js$/,
           loader: 'babel-loader',
           exclude: /node_modules/
+        },
+        {
+          test: /\.md$/,
+          loader: 'raw-loader'
         }
       ]
     },
