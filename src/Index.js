@@ -13,8 +13,8 @@ export default function Index() {
         <h1>DawnUI</h1>
         <div className="description">一个react 移动端组件库</div>
         <div>
-          <Button type="info" round href="#/docs/quickstart" className="mr-15">开始使用</Button>
-          <Button type="info" round plain>扫码体验</Button>
+          <Button tag="a" type="primary" round href="#/docs/quickstart" className="mr-15">开始使用</Button>
+          <Button type="info" round plain href="#/demos/index">扫码体验</Button>
         </div>
       </div>
       <div className="intro">

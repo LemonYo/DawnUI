@@ -19,7 +19,7 @@ const config = {
 // 编译js handle
 function compilerScript(babelEnv, dir) {
   process.env.BABEL_ENV = babelEnv
-  return src("packages/**/*.js")
+  return src(['packages/**/*.js', '!packages/**/test/*.js',  '!packages/**/demo/*.js'])
     .pipe(
       through2.obj(function z(file, encoding, next) {
         this.push(file.clone());

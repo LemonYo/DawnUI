@@ -1,108 +1,134 @@
 @import '../../style/variable';
 
 .ui-btn {
-  height: 44px;
+  position: relative;
   text-decoration: none;
   border-radius: $button-border-radius;
+  font-family: $font-family;
+  border: none;
   box-sizing: border-box;
   cursor: pointer;
   text-align: center;
   outline: none;
-  font-size: 14px;
   display: inline-block;
   transition: all 0.3s;
   font-weight: 500;
-  color: $button-color;
   user-select: none;
   -webkit-tap-highlight-color: transparent;
   word-break: keep-all;
-  position: relative;
   &:after {
+    content: "";
     position: absolute;
-    top: 50%;
-    left: 50%;
-    width: 100%;
-    height: 100%;
-    background-color: #000;
-    border-color: #000;
-    border-radius: inherit;
-    transform: translate(-50%, -50%);
-    opacity: 0;
-    content: ' ';
+    top: 0;
+    left: 0;
+    right: auto;
+    bottom: auto;
+    width: 200%;
+    height: 200%;
+    border: 2px solid $color-border;
+    box-sizing: border-box;
+    transform-origin: 0 0;
+    transform: scale(.5);
+    z-index: 2;
+    border-radius: $base-border-radius * 2;
   }
-}
-.ui-btn:active:after {
-  opacity: 0.1;
-}
-.ui-btn_block {
-  display: block;
-  width: 100%;
-}
-.ui-btn_round {
-  border-radius: 999px;
-}
-.ui-btn_disabled {
-  opacity: 0.3;
+  &.round {
+    border-radius: 9999px;
+    &:after {
+      border-radius: 9999px;
+    }
+  }
+  &.block {
+    display: block;
+    width: 100%;
+  }
+  &:active {
+    opacity: .8;
+  }
+  &.disabled {
+    cursor: not-allowed;
+    opacity: .5;
+  }
 }
 .ui-btn_default {
   background-color: #fff;
-  color: $button-default-text-color;
-  border: 1px solid $button-default-border-color;
-}
-.ui-btn_info {
-  background-color: $button-info-fill;
-  border: 1px solid $button-info-fill;
-}
-.ui-btn_warn {
-  background-color: $button-warn-fill;
-  border: 1px solid $button-warn-fill;
+  color: $color-base;
+  &.plain {
+    background: transparent;
+  }
 }
 .ui-btn_primary {
+  background-color: $color-primary;
+  color: #fff;
+  &:after {
+    border-color: $color-primary;
+  }
+  &.plain {
+    background-color: transparent;
+    color: $color-primary;
+    &:after {
+      border-color: $color-primary;
+    }
+  }
+}
+.ui-btn_warn {
+  background-color: $color-warn;
+  color: #fff;
+  &:after {
+    border-color: $color-warn;
+  }
+  &.plain {
+    background-color: transparent;
+    color: $color-warn;
+    &:after {
+      border-color: $color-warn;
+    }
+  }
+}
+.ui-btn_danger {
+  background-color: $color-error;
+  color: #fff;
+  &:after {
+    border-color: $color-error;
+  }
+  &.plain {
+    background-color: transparent;
+    color: $color-error;
+    &:after {
+      border-color: $color-error;
+    }
+  }
+}
+.ui-btn_niello {
   background: linear-gradient(55deg, #FFDD9A, #DCAC8C);
   color: #5D2500;
-  border: none;
+  &:after {
+    border-color: transparent;
+  }
 }
 
-.ui-btn_plain {
-  &.ui-btn_info {
-    background-color: #fff;
-    color: $button-info-fill;
-    border-color: $button-info-fill;
-  }
-  &.ui-btn_warn {
-    background-color: #fff;
-    color: $button-warn-fill;
-    border-color: $button-warn-fill;
-  }
-}
 .ui-btn_normal {
+  font-size: 14px;
+  height: 44px;
+  line-height: 44px;
   padding: 0 15px;
-  font-size: 16px;
 }
-a.ui-btn_normal {
-  line-height: 42px;
-}
+
 .ui-btn_large {
-  padding: 0 20px;
-  font-size: 18px;
-}
-a.ui-btn_large {
-  line-height: 48px;
+  font-size: 16px;
+  line-height: 50px;
+  height: 50px;
+  padding: 0 16px;
 }
 .ui-btn_small {
   height: 32px;
+  line-height: 32px;
   padding: 0 10px;
   font-size: 14px;
 }
-a.ui-btn_small {
-  line-height: 30px;
-}
 .ui-btn_mini {
   height: 24px;
-  min-width: 60px;
+  line-height: 24px;
   padding: 0 5px;
   font-size: 12px;
-}
-a.ui-btn_mini {
-  line-height: 22px;
 }

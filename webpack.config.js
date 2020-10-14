@@ -12,10 +12,21 @@ module.exports = (env, argv) => {
       path: path.resolve(__dirname, './site'),
       filename: prodMode ? '[name].[hash:8].js' : '[name].js',
       chunkFilename: prodMode ? '[name].[chunkhash:8].js' : '[name].js',
-      publicPath: "/DawnUI/"
+      publicPath: prodMode ? "/DawnUI/" : '/'
     },
     module: {
       rules: [
+        {
+          test: /\.css$/,
+          use: [
+            {
+              loader: MiniCssExtractPlugin.loader,
+              options: {
+                hmr: argv.mode !== 'production',
+              },
+            },
+            'css-loader']
+        },
         {
           test: /\.scss$/,
           use: [
@@ -52,7 +63,7 @@ module.exports = (env, argv) => {
       }
     },
     devServer: {
-      host: 'localhost',
+      host: '192.168.0.8',
       port: 3000,
       // respond to 404s with index.html
       historyApiFallback: true,

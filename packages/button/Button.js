@@ -3,6 +3,7 @@ import classNames from "../utils/classnames"
 
 export default function Button(props) {
   const {
+    tag = 'button',
     type = 'default',
     disabled = false,
     size = 'normal',
@@ -14,22 +15,31 @@ export default function Button(props) {
     ...other
   } = props
 
-  const Component = other.href ? 'a' : 'button'
+  const Component = tag
 
   const cls = classNames(
     'ui-btn',
     `ui-btn_${type}`,
     `ui-btn_${size}`,
     {
-      'ui-btn_block': block,
-      'ui-btn_plain': plain,
-      'ui-btn_round': round,
-      'ui-btn_disabled': disabled
+      'block': block,
+      'plain': plain,
+      'round': round,
+      'disabled': disabled
     },
     className
   )
 
+  function onTouchStart() {}
+
   return (
-    <Component {...other} disabled={disabled} className={cls}>{children}</Component>
+    <Component
+      {...other}
+      disabled={disabled}
+      className={cls}
+      onTouchStart={onTouchStart}
+    >
+      {children}
+    </Component>
   )
 }
