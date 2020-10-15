@@ -6,9 +6,7 @@
   "module": "es/index.js",
   "files": [
     "es",
-    "lib",
-    "types",
-    "vetur"
+    "lib"
   ],
   "scripts": {
     "dev": "webpack-dev-server --config webpack.config.js --mode development",
@@ -69,6 +67,7 @@
     "raw-loader": "^4.0.1",
     "react": "^16.13.1",
     "react-dom": "^16.13.1",
+    "react-hot-loader": "^4.13.0",
     "react-markdown": "^4.3.1",
     "react-router-dom": "^5.2.0",
     "rimraf": "^3.0.2",

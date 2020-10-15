@@ -2,9 +2,6 @@ dist
 .idea
 lib
 es
-src/.umi
-.umi
-gp-site
 site
 node_modules
 package-lock.json

@@ -1,10 +1,10 @@
 import React from 'react'
+import { hot } from 'react-hot-loader/root'
 import { HashRouter as Router, Switch, Route, Redirect } from 'react-router-dom'
 import DemoRoutes from "./demos/Routes"
 import DocLayout from "./docs/Layout"
 import './app.scss'
 import Index from './Index'
-
 
 function App() {
   return (
@@ -20,4 +20,4 @@ function App() {
 }
 
 
-export default App
+export default hot(App)
