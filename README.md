@@ -22,6 +22,6 @@ import {Button} from 'DawnUI'
 ```
 ## Browser Support
 
-Modern browsers and Android 4.0+, iOS 6+.
+Modern browsers and Android 4.0+, iOS 8+.
 
 
